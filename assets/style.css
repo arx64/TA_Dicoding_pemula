@@ -73,7 +73,6 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    gap: 2rem;
     justify-content: center;
     align-items: center;
     color: white;
@@ -87,6 +86,26 @@ nav ul li a {
     flex-shrink: 0;
     flex-wrap: nowrap;
     flex-basis: 70%;
+    border-radius: 5px;
+}
+
+.gambar-wh {
+    width: 250px;
+    height: 100px;
+}
+
+.gambar-shakemap {
+    width: 350px;
+}
+
+.tengah {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    /* margin-bottom: -1rem; */
+}
+
+.rounded {
     border-radius: 5px;
 }
 
