@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <!-- API Key NewsAPI: 58b856756b5848bc90d86f7eadbbb8f9 -->
     <div class="jumbotron">
         <header>
             <h2>Cek Gempabumi</h2>
@@ -17,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#last_gempa">Gempa Terakhir</a></li>
+                    <li><a href="#last_gempa">Gempa Terbaru</a></li>
                     <li><a href="#aboutMe">Tentang Saya</a></li>
                     <!-- <li><a href="#tentang">Tentang Pracu</a></li> -->
                 </ul>
@@ -43,39 +42,20 @@
                             $data = json_decode($sc, true);
                             $data_gempa = $data["Infogempa"]["gempa"];
                             // print_r($data_gempa);
-                            $url_gempa = $data_gempa["Shakemap"];
+                            $url_gempa = "https://data.bmkg.go.id/DataMKG/TEWS/".$data_gempa["Shakemap"];
                             ?>
-                            <img src="https://data.bmkg.go.id/DataMKG/TEWS/<?=$url_gempa;?>" alt="ShakeMap BMKG" class="gambar-shakemap rounded">
+                            <a href="<?=$url_gempa;?>" target="_blank"><img src="<?=$url_gempa;?>" alt="ShakeMap BMKG" class="gambar-shakemap rounded"></a>
                         </div>
                         <p class="isi">
-                            <?php foreach ($data_gempa as $key => $value) {
+                            <?php 
+                            unset($data_gempa["Shakemap"]);
+                            foreach ($data_gempa as $key => $value) {
                             // print_r($key);
                             echo "$key: $value<br>";
-                            if ($value) {
-                                # code...
-                            }
                         }
                         ?>
                         </p>
                 </article>
-
-                <article class="box">
-                    <h3 class="judul">Gempabumi Terbaru</h3>
-                        <div class="tengah">
-                            <img src="https://data.bmkg.go.id/DataMKG/TEWS/" alt="ShakeMap BMKG" class="gambar-wh rounded">
-                        </div>
-                        <p class="isi"></p>
-                </article>
-                
-                <article class="box">
-                    <h3 class="judul">Gempabumi Terbaru</h3>
-                        <div class="tengah">
-                            <img src="https://data.bmkg.go.id/DataMKG/TEWS/" alt="ShakeMap BMKG" class="gambar-wh rounded">
-                        </div>
-                        <p class="isi"></p>
-                </article>
-                <!-- untuk menambahkan konten secara otomatis melalui API -->
-                <!-- <div id="hasil"></div> -->
             </div>
                  <!-- Konten samping -->
             <aside>
