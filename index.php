@@ -54,6 +54,10 @@
                             echo "$key: $value<br>";
                         }
                         ?>
+                        <p class="wm-bmkg">
+                            <i class="bi bi-info-circle-fill"></i> API Oleh: 
+                            <a href="https://data.bmkg.go.id/" target="_blank">BMKG(Badan Meteorologi, Klimatologi, dan Geofisika)</a>
+                        </p>
                         </p>
                 </article>
             </div>
