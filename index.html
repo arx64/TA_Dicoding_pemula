@@ -6,6 +6,9 @@
     <title>TugasAkhir - DicodingCourse</title>
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style.css">
+
+    <!-- My JS -->
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
     <div class="jumbotron">
@@ -18,7 +21,6 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#last_gempa">Gempa Terbaru</a></li>
                     <li><a href="#aboutMe">Tentang Saya</a></li>
-                    <!-- <li><a href="#tentang">Tentang Pracu</a></li> -->
                 </ul>
             </nav>
         </header>
@@ -37,27 +39,14 @@
                 <article class="box" id="last_gempa">
                     <h3 class="judul">Gempabumi Terbaru</h3>
                         <div class="tengah">
-                            <?php
-                            $sc = file_get_contents("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json");
-                            $data = json_decode($sc, true);
-                            $data_gempa = $data["Infogempa"]["gempa"];
-                            // print_r($data_gempa);
-                            $url_gempa = "https://data.bmkg.go.id/DataMKG/TEWS/".$data_gempa["Shakemap"];
-                            ?>
-                            <a href="<?=$url_gempa;?>" target="_blank"><img src="<?=$url_gempa;?>" alt="ShakeMap BMKG" class="gambar-shakemap rounded"></a>
+                            <a id="shakemap-link" href="" target="_blank"><img id="shakemap-img" src="" alt="ShakeMap BMKG" class="gambar-shakemap rounded"></a>
                         </div>
-                        <p class="isi">
-                            <?php 
-                            unset($data_gempa["Shakemap"]);
-                            foreach ($data_gempa as $key => $value) {
-                            // print_r($key);
-                            echo "$key: $value<br>";
-                        }
-                        ?>
+                        <div class="isi-data">
+                            <!-- Didalam Element ini akan di-update dengan fetch dari javascript dibawah -->
+                        </div>
                         <p class="wm-bmkg">
                             <i class="bi bi-info-circle-fill"></i> API Oleh: 
                             <a href="https://data.bmkg.go.id/" target="_blank">BMKG(Badan Meteorologi, Klimatologi, dan Geofisika)</a>
-                        </p>
                         </p>
                 </article>
             </div>
@@ -84,8 +73,5 @@
             </aside>
         </main>
         <footer>Muhammad Arifin Ilham &copy; Tugas Akhir Dicoding</footer>
-        <script>
-
-            </script>
 </body>
 </html>

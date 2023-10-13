@@ -45,9 +45,6 @@ nav {
     padding: 5px;
     position: sticky;
     top: 0;
-    /* color: white; */
-    /* display: inline; */
-
 }
 
 nav ul {
@@ -67,6 +64,12 @@ p.isi {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+p.isi-js {
+    margin: 5px;
+    /* margin-inline-bottom: 1rem; */
+}
+
 nav ul li {
     list-style-type: none;
 
@@ -79,15 +82,21 @@ nav ul li a {
     color: white;
 
 }
+
+#shakemap-img {
+width: 150px;
+}
+
 .content {
     box-shadow: 5px 9px 20px 0px rgb(59, 57, 57);
     margin-top: 1.5rem;
-    margin-inline-start: 1.5rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
     padding: 2rem;
     flex-shrink: 0;
     flex-wrap: nowrap;
     flex-basis: 70%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .gambar-wh {
@@ -104,6 +113,7 @@ nav ul li a {
     background-color: #1AACAC;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 1rem;
     text-decoration: none;
 }
 
@@ -145,6 +155,7 @@ main {
     gap: 1rem;
     margin-inline-end: 1rem;
     justify-content: center;
+    text-align:start;
     /* flex-wrap: wrap; */
 }
 
@@ -164,8 +175,9 @@ aside {
     /* flex: 1; */
     padding-top: 1rem;
     flex-direction: row;
-    padding-inline-end: 1rem;
-    padding-inline-start: 1rem;
+    /* padding-inline-end: 1rem; */
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
     justify-content: center;
     text-align: center;
     margin-bottom: 2rem;
@@ -202,7 +214,8 @@ footer {
 
     main {
         flex-flow: column nowrap;
-        padding: 2rem;
+        /* padding: 2rem; */
+        justify-content: center;
     }
 
     aside {
@@ -210,6 +223,7 @@ footer {
         justify-content: center;
         /* padding-inline-end: 1rem; */
         text-align: center;
+        /* padding-inline-start: 1rem; */
     }
 }
 
@@ -223,16 +237,12 @@ footer {
             color: white;
             font-weight: bold;
         }
-
-    aside {
-        flex-direction: row;
-    }
 } 
 
-@media screen and (max-width: 1065px) {
+/* @media screen and (min-width: 1065px) {
     main {
         flex-flow: column nowrap;
         padding: 2rem;
     }
     
-}
+} */
